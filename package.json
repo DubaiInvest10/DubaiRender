@@ -8,7 +8,7 @@
     "server:dev": "NODE_ENV=development tsx server/index.ts",
     "expo:start:static:build": "npx expo start --no-dev --minify --localhost",
     "expo:static:build": "node scripts/build.js",
-    "server:build": "esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outdir=server_dist",
+    "server:build": "npx esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outdir=server_dist",
     "server:prod": "NODE_ENV=production node server_dist/index.js",
     "db:push": "drizzle-kit push",
     "start": "npx expo start",
@@ -16,6 +16,7 @@
     "lint:fix": "npx expo lint --fix"
   },
   "dependencies": {
+    "esbuild": "^0.25.0",
     "patch-package": "^8.0.0",
     "@expo-google-fonts/dm-sans": "^0.4.2",
     "@expo/vector-icons": "^15.0.3",
